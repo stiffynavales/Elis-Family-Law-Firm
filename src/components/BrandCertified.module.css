@@ -1,0 +1,141 @@
+.section {
+  background: var(--clr-cream);
+  padding: var(--section-pad) 0;
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Badge */
+.badgeWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  width: 220px;
+  height: 220px;
+  position: relative;
+  animation: badgeSpin 20s linear infinite;
+}
+
+@keyframes badgeSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.badgeOuter {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--clr-gold-dark) 0deg,
+    var(--clr-gold) 45deg,
+    var(--clr-gold-light) 90deg,
+    var(--clr-gold) 135deg,
+    var(--clr-gold-dark) 180deg,
+    var(--clr-gold) 225deg,
+    var(--clr-gold-light) 270deg,
+    var(--clr-gold) 315deg,
+    var(--clr-gold-dark) 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 0 6px var(--clr-cream),
+    0 0 0 8px var(--clr-gold),
+    0 12px 48px rgba(184,151,90,0.4);
+  position: relative;
+}
+
+.badgeOuter::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255,255,255,0.4);
+  animation: badgeSpin 20s linear infinite reverse;
+}
+
+.badgeInner {
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  border-radius: 50%;
+  background: var(--clr-gold-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  animation: badgeSpin 20s linear infinite reverse;
+  z-index: 1;
+}
+
+.badgeIcon {
+  font-size: 1.5rem;
+  color: var(--clr-gold-light);
+}
+
+.badgeTextTop {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+
+.badgeTextMain {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--clr-white);
+  text-transform: uppercase;
+}
+
+.badgeTextBottom {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+
+.badgeStars {
+  font-size: 0.55rem;
+  color: var(--clr-gold-light);
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+/* Content */
+.heading {
+  margin-bottom: 20px;
+}
+
+.body {
+  font-size: 0.93rem;
+  color: var(--clr-text-muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 860px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  .badgeWrap { justify-content: center; }
+  .divider-gold { margin-inline: auto; }
+}

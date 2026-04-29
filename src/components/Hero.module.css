@@ -1,0 +1,172 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 130px; /* Offset for dual-row navbar */
+}
+
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 17, 20, 0.45); /* Dark tint to make text readable */
+}
+
+/* Decorative Arcs */
+.arcLeft, .arcRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35vw;
+  height: 120vh;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.arcLeft {
+  left: -20vw;
+  background: radial-gradient(circle, transparent 40%, rgba(184, 151, 90, 0.15) 80%, rgba(184, 151, 90, 0.3) 100%);
+  border-right: 1px solid rgba(184, 151, 90, 0.2);
+}
+
+.arcRight {
+  right: -20vw;
+  background: radial-gradient(circle, transparent 40%, rgba(184, 151, 90, 0.15) 80%, rgba(184, 151, 90, 0.3) 100%);
+  border-left: 1px solid rgba(184, 151, 90, 0.2);
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Glassmorphism Box */
+.glassBox {
+  background: rgba(40, 42, 45, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 64px 40px;
+  text-align: center;
+  max-width: 860px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: fadeUp 0.8s var(--ease) both;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--clr-white);
+  margin-bottom: 24px;
+}
+
+.highlight {
+  color: #c4a47c; /* Gold from screenshot */
+}
+
+.subtext {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  font-weight: 400;
+}
+
+.starText {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: #c4a47c;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Buttons matching the screenshot exactly */
+.btnSolid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #c4a47c;
+  color: #2c2422;
+  padding: 16px 36px;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btnSolid:hover {
+  background: #d4b48c;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  margin-left: 8px;
+  font-family: var(--font-sans);
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--clr-white);
+  border: 1px solid rgba(255,255,255,0.8);
+  padding: 16px 36px;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btnOutline:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .glassBox {
+    padding: 40px 20px;
+  }
+  .arcLeft, .arcRight {
+    display: none;
+  }
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btnSolid, .btnOutline {
+    width: 100%;
+  }
+}
