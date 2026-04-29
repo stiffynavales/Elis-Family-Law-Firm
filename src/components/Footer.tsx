@@ -36,7 +36,7 @@ export default function Footer() {
           <div className={styles.logo}>
             <span className={styles.logoIcon}>⚖</span>
             <span className={styles.logoText}>
-              Elis <em>Family Law</em>
+              Deer<em>Designer</em>
             </span>
           </div>
           <p className={styles.tagline}>
@@ -80,7 +80,7 @@ export default function Footer() {
         <div className="container">
           <div className={styles.bottomInner}>
             <p className={styles.copyright}>
-              © {year} Elis Family Law. All rights reserved. Attorney Advertising.
+              © {year} DeerDesigner. All rights reserved.
             </p>
             <div className={styles.legal}>
               <a href="#" className={styles.legalLink}>Privacy Policy</a>
